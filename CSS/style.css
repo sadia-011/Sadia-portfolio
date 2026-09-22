@@ -1,0 +1,118 @@
+ * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #3167b8;
+}
+
+header, footer {
+    background: #172554;
+    color: white;
+    padding: 20px 8%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+nav a:hover {
+    color: rgb(51, 0, 255);
+}
+
+section {
+    padding: 40px 5%;
+}
+
+.hero {
+    text-align: center;
+    background: #000000;
+}
+
+.hero h1 {
+    color: #172554;
+}
+
+.btn, button {
+    background: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card, form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #bbb;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #2563eb;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+}
+
+button {
+    width: 100%;
+    cursor: pointer;
+}
+
+input:focus, select:focus {
+    border: 2px solid #2563eb;
+}
+
+footer {
+    text-align: center;
+}
+
+@media(max-width: 700px) {
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
