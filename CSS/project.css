@@ -1,0 +1,167 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: pink;
+    color: rgb(21, 21, 194);
+}
+
+/* Header */
+header {
+    background: rgb(174, 9, 9);
+    color: rgb(1, 9, 17);
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* Navigation */
+nav {
+    background: black;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(178, 88, 88);
+}
+
+/* Sections */
+section {
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgb(181, 89, 89);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: rgb(12, 105, 105);
+}
+
+/* About Me Image */
+img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Skills */
+ul {
+    margin-left: 25px;
+    line-height: 35px;
+}
+
+/* Education Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid rgb(117, 27, 27);
+}
+
+th {
+    background: rgb(78, 78, 187);
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Project Cards */
+.card {
+    background: rgb(54, 50, 50);
+    color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 6px solid blueviolet;
+    border-radius: 5px;
+}
+
+.card:hover {
+    background: pink;
+    color: black;
+}
+
+/* Contact Information */
+#Contact p {
+    margin: 8px 0;
+    color: rgb(21, 21, 194);
+}
+
+#Contact p strong {
+    color: rgb(12, 105, 105);
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid rgb(122, 0, 0);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Message Box */
+textarea {
+    resize: vertical;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background: rgb(78, 78, 187);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background: rgb(174, 9, 9);
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: rgb(216, 138, 138);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
