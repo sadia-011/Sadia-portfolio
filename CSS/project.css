@@ -7,9 +7,9 @@
 }
 
 
-/* ==========================================
-   BODY
-========================================== */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -19,49 +19,76 @@ body {
 }
 
 
-/* ==========================================
-   HEADER
-========================================== */
 
 header {
     background: rgb(174, 9, 9);
     color: rgb(1, 9, 17);
-    padding: 45px 20px;
+    padding: 70px 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(117, 27, 27, 0.5);
 }
 
-header h1 {
-    font-size: 40px;
-    margin-bottom: 8px;
+.header-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
     letter-spacing: 2px;
 }
 
-header p {
-    font-size: 18px;
+.header-content p {
+    font-size: 20px;
     font-weight: bold;
+    margin-bottom: 25px;
 }
 
 
-/* ==========================================
-   NAVIGATION
-========================================== */
+
+.header-button {
+    display: inline-block;
+    background: black;
+    color: white;
+
+    padding: 12px 25px;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.header-button:hover {
+    background: rgb(78, 78, 187);
+    transform: scale(1.05);
+}
+
+
 
 nav {
     background: black;
-    padding: 18px;
-    text-align: center;
+    padding: 17px;
+
     position: sticky;
     top: 0;
+
     z-index: 1000;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+    text-align: center;
 }
 
 nav a {
     color: white;
+
     text-decoration: none;
-    margin: 0 18px;
+
+    margin: 0 15px;
+
     font-weight: bold;
-    font-size: 16px;
+
     transition: 0.3s;
 }
 
@@ -70,22 +97,31 @@ nav a:hover {
 }
 
 
-/* ==========================================
-   SECTIONS
-========================================== */
+
+
+nav a.active {
+    color: rgb(178, 88, 88);
+}
+
+
+
 
 section {
-    margin: 35px auto;
-    padding: 30px;
     width: 85%;
-    max-width: 1000px;
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    padding: 35px;
 
     background: rgba(255, 255, 255, 0.45);
 
     border-radius: 15px;
 
     box-shadow:
-        0px 6px 15px rgba(181, 89, 89, 0.6);
+        0 6px 15px rgb(181, 89, 89);
+
+    scroll-margin-top: 80px;
 
     transition: 0.3s;
 }
@@ -95,87 +131,197 @@ section:hover {
 }
 
 
-/* ==========================================
-   SECTION HEADINGS
-========================================== */
 
 h2 {
-    margin-bottom: 20px;
+    text-align: center;
+
     color: rgb(12, 105, 105);
-    text-align: center;
-    font-size: 28px;
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+h2::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 4px;
+
+    background: rgb(174, 9, 9);
+
+    margin: 8px auto;
+
+    border-radius: 5px;
 }
 
 
-/* ==========================================
-   ABOUT ME
-========================================== */
+.about-container {
+    display: flex;
 
-#about p {
-    text-align: center;
-    font-size: 17px;
-    max-width: 700px;
-    margin: auto;
+    align-items: center;
+
+    gap: 40px;
 }
 
+.about-image {
+    flex: 1;
 
-/* ==========================================
-   ABOUT ME IMAGE
-========================================== */
+    text-align: center;
+}
 
-img {
-    width: 180px;
-    height: 180px;
+.about-image img {
+    width: 210px;
+    height: 210px;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    display: block;
-    margin: 20px auto;
-
     border: 6px solid rgb(78, 78, 187);
 
     box-shadow:
-        0px 5px 15px rgba(117, 27, 27, 0.5);
+        0 6px 15px rgba(117, 27, 27, 0.5);
 
     transition: 0.4s;
 }
 
-img:hover {
+.about-image img:hover {
     transform: scale(1.08);
+
     border-color: rgb(174, 9, 9);
 }
 
-
-/* ==========================================
-   SKILLS
-========================================== */
-
-ul {
-    margin-left: 25px;
-    line-height: 35px;
+.about-text {
+    flex: 2;
 }
 
-ul li {
+.about-text h3 {
+    color: rgb(174, 9, 9);
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+
+
+
+.button {
+    display: inline-block;
+
+    background: rgb(78, 78, 187);
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s;
 }
 
-ul li:hover {
-    color: rgb(174, 9, 9);
-    transform: translateX(8px);
+.button:hover {
+    background: rgb(174, 9, 9);
+
+    transform: scale(1.05);
 }
 
 
-/* ==========================================
-   EDUCATION TABLE
-========================================== */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.skill h3 {
+    color: rgb(12, 105, 105);
+
+    margin-bottom: 8px;
+}
+
+.skill-bar {
+    background: rgb(54, 50, 50);
+
+    height: 25px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+
+    background: rgb(78, 78, 187);
+
+    color: white;
+
+    text-align: right;
+
+    padding-right: 10px;
+
+    line-height: 25px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    width: 0;
+
+    transition: width 1.5s ease;
+}
+
+.skill-progress.html {
+    --skill-width: 90%;
+}
+
+.skill-progress.css {
+    --skill-width: 85%;
+}
+
+.skill-progress.bootstrap {
+    --skill-width: 80%;
+}
+
+.skill-progress.python {
+    --skill-width: 75%;
+}
+
+.skill-progress.django {
+    --skill-width: 70%;
+}
+
+.skill-progress.javascript {
+    --skill-width: 75%;
+}
+
+
+
+.table-container {
+    overflow-x: auto;
+}
 
 table {
     width: 100%;
+
     border-collapse: collapse;
-    margin-top: 20px;
+
     background: rgba(255, 255, 255, 0.4);
 }
 
@@ -187,13 +333,17 @@ td {
 
 th {
     background: rgb(78, 78, 187);
+
     color: white;
-    padding: 12px;
+
+    padding: 14px;
 }
 
 td {
-    padding: 12px;
+    padding: 14px;
+
     text-align: center;
+
     color: rgb(21, 21, 194);
 }
 
@@ -201,85 +351,132 @@ tr {
     transition: 0.3s;
 }
 
-tr:hover {
+tbody tr:hover {
     background: rgb(178, 88, 88);
 }
 
-tr:hover td {
+tbody tr:hover td {
     color: white;
 }
 
 
-/* ==========================================
-   PROJECT CARDS
-========================================== */
+
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
 
 .card {
     background: rgb(54, 50, 50);
+
     color: white;
 
-    padding: 22px;
-    margin: 18px 0;
+    padding: 25px;
 
     border-left: 7px solid blueviolet;
 
     border-radius: 8px;
 
-    box-shadow: 0px 5px 10px rgba(117, 27, 27, 0.4);
+    box-shadow:
+        0 5px 10px rgba(117, 27, 27, 0.4);
 
     transition: 0.3s;
 }
 
-.card h3 {
-    color: rgb(216, 138, 138);
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: white;
-}
-
 .card:hover {
     background: pink;
+
     color: black;
 
-    transform: translateX(8px);
+    transform: translateY(-10px);
 
     border-left-color: rgb(174, 9, 9);
 }
 
-.card:hover h3,
-.card:hover p {
-    color: black;
+.project-icon {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: rgb(216, 138, 138);
+
+    margin-bottom: 10px;
+}
+
+.card:hover h3 {
+    color: rgb(174, 9, 9);
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+.card span {
+    display: inline-block;
+
+    background: rgb(78, 78, 187);
+
+    color: white;
+
+    padding: 4px 10px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    margin-right: 5px;
 }
 
 
-/* ==========================================
-   CONTACT INFORMATION
-========================================== */
 
-#contact p {
-    margin: 8px 0;
+.contact-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.5fr;
+
+    gap: 40px;
+}
+
+.contact-info h3 {
+    color: rgb(174, 9, 9);
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 12px 0;
+
     color: rgb(21, 21, 194);
 }
 
-#contact p strong {
+.contact-info strong {
     color: rgb(12, 105, 105);
 }
 
 
-/* ==========================================
-   CONTACT FORM
-========================================== */
+
 
 form {
     display: flex;
+
     flex-direction: column;
 }
 
 label {
-    margin-top: 12px;
+    margin-top: 10px;
+
     font-weight: bold;
+
     color: rgb(12, 105, 105);
 }
 
@@ -302,9 +499,6 @@ textarea {
     transition: 0.3s;
 }
 
-
-/* Input focus effect */
-
 input:focus,
 textarea:focus {
     border-color: rgb(78, 78, 187);
@@ -313,20 +507,12 @@ textarea:focus {
         0 0 8px rgba(78, 78, 187, 0.5);
 }
 
-
-/* ==========================================
-   MESSAGE BOX
-========================================== */
-
 textarea {
     resize: vertical;
-    min-height: 120px;
 }
 
 
-/* ==========================================
-   SUBMIT BUTTON
-========================================== */
+
 
 input[type="submit"] {
     background: rgb(78, 78, 187);
@@ -337,11 +523,9 @@ input[type="submit"] {
 
     cursor: pointer;
 
-    margin-top: 18px;
-
     border: none;
 
-    padding: 12px;
+    margin-top: 18px;
 
     transition: 0.3s;
 }
@@ -349,13 +533,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: rgb(174, 9, 9);
 
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
-
-/* ==========================================
-   FOOTER
-========================================== */
 
 footer {
     background: black;
@@ -370,91 +550,120 @@ footer {
 }
 
 footer p {
-    font-size: 15px;
+    margin: 5px;
 }
 
 
-/* ==========================================
-   RESPONSIVE DESIGN
-========================================== */
 
-@media (max-width: 768px) {
+#topButton {
+    position: fixed;
 
-    header h1 {
-        font-size: 32px;
+    bottom: 25px;
+
+    right: 25px;
+
+    background: rgb(174, 9, 9);
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 16px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: none;
+
+    font-size: 18px;
+
+    z-index: 999;
+
+    transition: 0.3s;
+}
+
+#topButton:hover {
+    background: rgb(78, 78, 187);
+
+    transform: scale(1.1);
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    .about-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .projects-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    .header-content h1 {
+        font-size: 35px;
+    }
+
+    .header-content p {
+        font-size: 16px;
     }
 
     nav a {
         display: inline-block;
-        margin: 5px 8px;
+
+        margin: 5px 7px;
+
         font-size: 14px;
-    }
-
-    section {
-        width: 92%;
-        padding: 20px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-    }
-
-}
-
-
-/* ==========================================
-   MOBILE DESIGN
-========================================== */
-
-@media (max-width: 480px) {
-
-    header {
-        padding: 30px 15px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    header p {
-        font-size: 15px;
-    }
-
-    nav {
-        padding: 12px;
-    }
-
-    nav a {
-        display: block;
-        margin: 8px;
     }
 
     section {
         width: 94%;
-        padding: 18px;
+
+        padding: 22px;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 25px;
     }
 
-    img {
-        width: 150px;
-        height: 150px;
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        width: 160px;
+
+        height: 160px;
     }
 
     table {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     th,
     td {
-        padding: 6px;
+        padding: 9px;
     }
 
 }
+

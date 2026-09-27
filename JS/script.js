@@ -1,21 +1,9 @@
 ```javascript
-// ==========================================
-// STUDENT PORTFOLIO - JAVASCRIPT
-// ==========================================
-
-// Wait until the complete HTML document is loaded
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ==========================================
-    // 1. WELCOME MESSAGE
-    // ==========================================
-
-    alert("Welcome to Sadia's Portfolio!");
-
-
-    // ==========================================
-    // 2. SMOOTH SCROLLING FOR NAVIGATION
-    // ==========================================
+    setTimeout(function () {
+        alert("Welcome to Sadia's Portfolio!");
+    }, 500);
 
     const navLinks = document.querySelectorAll("nav a");
 
@@ -23,101 +11,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
         link.addEventListener("click", function (event) {
 
-            event.preventDefault();
-
             const targetId = this.getAttribute("href");
-            const targetSection = document.querySelector(targetId);
 
-            if (targetSection) {
+            if (targetId.startsWith("#")) {
 
-                targetSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                event.preventDefault();
 
+                const target = document.querySelector(targetId);
+
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
             }
-
         });
-
     });
 
-
-    // ==========================================
-    // 3. CONTACT FORM VALIDATION
-    // ==========================================
-
-    const form = document.querySelector("form");
+    const form = document.getElementById("contactForm");
 
     if (form) {
 
         form.addEventListener("submit", function (event) {
 
-            // Prevent page refresh
             event.preventDefault();
 
             const name = document.getElementById("name").value.trim();
+
             const email = document.getElementById("mail").value.trim();
+
             const message = document.getElementById("message").value.trim();
 
-
-            // --------------------------------------
-            // Check Name
-            // --------------------------------------
-
             if (name === "") {
-
                 alert("Please enter your name.");
                 document.getElementById("name").focus();
-
                 return;
             }
-
-
-            // --------------------------------------
-            // Check Email
-            // --------------------------------------
 
             if (email === "") {
-
                 alert("Please enter your email.");
                 document.getElementById("mail").focus();
-
                 return;
             }
 
-
-            // --------------------------------------
-            // Check Email Format
-            // --------------------------------------
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailPattern.test(email)) {
-
                 alert("Please enter a valid email address.");
                 document.getElementById("mail").focus();
-
                 return;
             }
-
-
-            // --------------------------------------
-            // Check Message
-            // --------------------------------------
 
             if (message === "") {
-
                 alert("Please write a message.");
                 document.getElementById("message").focus();
-
                 return;
             }
-
-
-            // --------------------------------------
-            // Successful Submission
-            // --------------------------------------
 
             alert(
                 "Thank you, " +
@@ -125,148 +74,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 "! Your message has been submitted successfully."
             );
 
-            // Clear the form
             form.reset();
-
         });
-
     }
 
+    const year = document.getElementById("year");
 
-    // ==========================================
-    // 4. PROJECT CARD INTERACTION
-    // ==========================================
-
-    const projectCards = document.querySelectorAll(".card");
-
-    projectCards.forEach(function (card) {
-
-        // Mouse enters the card
-        card.addEventListener("mouseenter", function () {
-
-            this.style.transform = "scale(1.03)";
-            this.style.cursor = "pointer";
-
-        });
-
-
-        // Mouse leaves the card
-        card.addEventListener("mouseleave", function () {
-
-            this.style.transform = "scale(1)";
-
-        });
-
-
-        // Click project card
-        card.addEventListener("click", function () {
-
-            const projectTitle =
-                this.querySelector("h3").textContent;
-
-            alert("You selected: " + projectTitle);
-
-        });
-
-    });
-
-
-    // ==========================================
-    // 5. DYNAMIC FOOTER YEAR
-    // ==========================================
-
-    const footer = document.querySelector("footer p");
-
-    if (footer) {
-
-        const currentYear = new Date().getFullYear();
-
-        footer.innerHTML =
-            "&copy; Personal Portfolio " + currentYear;
-
+    if (year) {
+        year.textContent = new Date().getFullYear();
     }
-
-
-    // ==========================================
-    // 6. TYPING EFFECT FOR HEADER
-    // ==========================================
-
-    const headerText = document.querySelector("header p");
-
-    if (headerText) {
-
-        const originalText =
-            "Computer Science & Engineering";
-
-        let index = 0;
-
-        headerText.textContent = "";
-
-
-        function typeText() {
-
-            if (index < originalText.length) {
-
-                headerText.textContent +=
-                    originalText.charAt(index);
-
-                index++;
-
-                setTimeout(typeText, 70);
-
-            }
-
-        }
-
-        typeText();
-
-    }
-
-
-    // ==========================================
-    // 7. SCROLL-TO-TOP BUTTON
-    // ==========================================
 
     const topButton = document.createElement("button");
 
-    topButton.textContent = "↑ Top";
-
     topButton.id = "topButton";
 
-    // Button styling
-    topButton.style.position = "fixed";
-    topButton.style.bottom = "20px";
-    topButton.style.right = "20px";
-    topButton.style.padding = "10px 15px";
-    topButton.style.border = "none";
-    topButton.style.borderRadius = "5px";
-    topButton.style.backgroundColor = "black";
-    topButton.style.color = "white";
-    topButton.style.cursor = "pointer";
-    topButton.style.display = "none";
-    topButton.style.zIndex = "1000";
+    topButton.innerHTML = "↑";
 
+    topButton.title = "Go to top";
 
     document.body.appendChild(topButton);
 
-
-    // Show button when scrolling
     window.addEventListener("scroll", function () {
 
         if (window.scrollY > 300) {
-
             topButton.style.display = "block";
-
         } else {
-
             topButton.style.display = "none";
-
         }
-
     });
 
-
-    // Scroll to top when button is clicked
     topButton.addEventListener("click", function () {
 
         window.scrollTo({
@@ -276,13 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    // ==========================================
-    // 8. HIGHLIGHT ACTIVE NAVIGATION LINK
-    // ==========================================
-
-    const sections =
-        document.querySelectorAll("section");
+    const sections = document.querySelectorAll("section");
 
     window.addEventListener("scroll", function () {
 
@@ -290,88 +120,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
         sections.forEach(function (section) {
 
-            const sectionTop =
-                section.offsetTop - 150;
+            const sectionTop = section.offsetTop - 150;
 
-            const sectionHeight =
-                section.clientHeight;
+            const sectionHeight = section.offsetHeight;
 
             if (
                 window.scrollY >= sectionTop &&
                 window.scrollY < sectionTop + sectionHeight
             ) {
-
                 currentSection = section.getAttribute("id");
-
             }
-
         });
-
 
         navLinks.forEach(function (link) {
 
-            link.style.fontWeight = "normal";
+            link.classList.remove("active");
 
             if (
                 link.getAttribute("href") ===
                 "#" + currentSection
             ) {
-
-                link.style.fontWeight = "bold";
-
+                link.classList.add("active");
             }
-
         });
-
     });
 
+    const skillBars = document.querySelectorAll(".skill-progress");
 
-    // ==========================================
-    // 9. CONTACT FORM CHARACTER COUNTER
-    // ==========================================
+    const skillObserver = new IntersectionObserver(
+        function (entries, observer) {
 
-    const messageBox =
-        document.getElementById("message");
+            entries.forEach(function (entry) {
 
-    if (messageBox) {
+                if (entry.isIntersecting) {
 
-        const counter =
-            document.createElement("small");
+                    const bar = entry.target;
+
+                    const width =
+                        getComputedStyle(bar)
+                        .getPropertyValue("--skill-width");
+
+                    bar.style.width = width;
+
+                    observer.unobserve(bar);
+                }
+            });
+        },
+        {
+            threshold: 0.5
+        }
+    );
+
+    skillBars.forEach(function (bar) {
+        skillObserver.observe(bar);
+    });
+
+    const projectCards = document.querySelectorAll(".card");
+
+    projectCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            const title =
+                this.querySelector("h3").textContent;
+
+            alert(
+                "You selected the project: " +
+                title
+            );
+        });
+    });
+
+    const message = document.getElementById("message");
+
+    if (message) {
+
+        const counter = document.createElement("small");
 
         counter.style.display = "block";
+
         counter.style.marginTop = "5px";
 
-        messageBox.parentNode.appendChild(counter);
+        counter.style.color = "rgb(12, 105, 105)";
 
+        message.parentNode.appendChild(counter);
 
         function updateCounter() {
 
-            const characters =
-                messageBox.value.length;
+            const count = message.value.length;
 
-            counter.textContent =
-                "Characters: " + characters;
-
+            counter.textContent = "Characters: " + count;
         }
 
-
-        messageBox.addEventListener(
+        message.addEventListener(
             "input",
             updateCounter
         );
 
-
         updateCounter();
-
     }
 
-
-    // ==========================================
-    // 10. CONSOLE MESSAGE
-    // ==========================================
-
     console.log(
-        "Sadia's Portfolio JavaScript loaded successfully!"
+        "Sadia's Portfolio JavaScript loaded successfully."
     );
 
 });
