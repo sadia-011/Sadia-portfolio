@@ -1,167 +1,460 @@
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ==========================================
+   BODY
+========================================== */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: pink;
     color: rgb(21, 21, 194);
+    line-height: 1.6;
 }
 
-/* Header */
+
+/* ==========================================
+   HEADER
+========================================== */
+
 header {
     background: rgb(174, 9, 9);
     color: rgb(1, 9, 17);
-    padding: 30px;
+    padding: 45px 20px;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(117, 27, 27, 0.5);
 }
 
 header h1 {
-    margin-bottom: 5px;
+    font-size: 40px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
 }
 
-/* Navigation */
+header p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
 nav {
     background: black;
-    padding: 15px;
+    padding: 18px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
-    color: rgb(255, 255, 255);
+    color: white;
     text-decoration: none;
-    margin: 20px;
+    margin: 0 18px;
     font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: rgb(178, 88, 88);
 }
 
-/* Sections */
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
 section {
-    margin: 30px auto;
-    padding: 20px;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 6px 10px rgb(181, 89, 89);
+    margin: 35px auto;
+    padding: 30px;
+    width: 85%;
+    max-width: 1000px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0px 6px 15px rgba(181, 89, 89, 0.6);
+
+    transition: 0.3s;
 }
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
 
 h2 {
     margin-bottom: 20px;
     color: rgb(12, 105, 105);
+    text-align: center;
+    font-size: 28px;
 }
 
-/* About Me Image */
+
+/* ==========================================
+   ABOUT ME
+========================================== */
+
+#about p {
+    text-align: center;
+    font-size: 17px;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* ==========================================
+   ABOUT ME IMAGE
+========================================== */
+
 img {
     width: 180px;
     height: 180px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     display: block;
     margin: 20px auto;
+
+    border: 6px solid rgb(78, 78, 187);
+
+    box-shadow:
+        0px 5px 15px rgba(117, 27, 27, 0.5);
+
+    transition: 0.4s;
 }
 
-/* Skills */
+img:hover {
+    transform: scale(1.08);
+    border-color: rgb(174, 9, 9);
+}
+
+
+/* ==========================================
+   SKILLS
+========================================== */
+
 ul {
     margin-left: 25px;
     line-height: 35px;
 }
 
-/* Education Table */
+ul li {
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    color: rgb(174, 9, 9);
+    transform: translateX(8px);
+}
+
+
+/* ==========================================
+   EDUCATION TABLE
+========================================== */
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.4);
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid rgb(117, 27, 27);
 }
 
 th {
     background: rgb(78, 78, 187);
     color: white;
-    padding: 10px;
+    padding: 12px;
 }
 
 td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    color: rgb(21, 21, 194);
 }
 
-/* Project Cards */
+tr {
+    transition: 0.3s;
+}
+
+tr:hover {
+    background: rgb(178, 88, 88);
+}
+
+tr:hover td {
+    color: white;
+}
+
+
+/* ==========================================
+   PROJECT CARDS
+========================================== */
+
 .card {
     background: rgb(54, 50, 50);
     color: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-left: 6px solid blueviolet;
-    border-radius: 5px;
+
+    padding: 22px;
+    margin: 18px 0;
+
+    border-left: 7px solid blueviolet;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 5px 10px rgba(117, 27, 27, 0.4);
+
+    transition: 0.3s;
+}
+
+.card h3 {
+    color: rgb(216, 138, 138);
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: white;
 }
 
 .card:hover {
     background: pink;
     color: black;
+
+    transform: translateX(8px);
+
+    border-left-color: rgb(174, 9, 9);
 }
 
-/* Contact Information */
-#Contact p {
+.card:hover h3,
+.card:hover p {
+    color: black;
+}
+
+
+/* ==========================================
+   CONTACT INFORMATION
+========================================== */
+
+#contact p {
     margin: 8px 0;
     color: rgb(21, 21, 194);
 }
 
-#Contact p strong {
+#contact p strong {
     color: rgb(12, 105, 105);
 }
 
-/* Contact Form */
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
 form {
     display: flex;
     flex-direction: column;
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 12px;
     font-weight: bold;
+    color: rgb(12, 105, 105);
 }
 
 input,
 textarea {
-    padding: 10px;
+    padding: 12px;
+
     margin-top: 5px;
-    border: 1px solid rgb(122, 0, 0);
-    border-radius: 5px;
+
+    border: 2px solid rgb(122, 0, 0);
+
+    border-radius: 6px;
+
     font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
 }
 
-/* Message Box */
+
+/* Input focus effect */
+
+input:focus,
+textarea:focus {
+    border-color: rgb(78, 78, 187);
+
+    box-shadow:
+        0 0 8px rgba(78, 78, 187, 0.5);
+}
+
+
+/* ==========================================
+   MESSAGE BOX
+========================================== */
+
 textarea {
     resize: vertical;
+    min-height: 120px;
 }
 
-/* Submit Button */
+
+/* ==========================================
+   SUBMIT BUTTON
+========================================== */
+
 input[type="submit"] {
     background: rgb(78, 78, 187);
+
     color: white;
+
     font-weight: bold;
+
     cursor: pointer;
-    margin-top: 15px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    padding: 12px;
+
+    transition: 0.3s;
 }
 
 input[type="submit"]:hover {
     background: rgb(174, 9, 9);
+
+    transform: scale(1.03);
 }
 
-/* Footer */
+
+/* ==========================================
+   FOOTER
+========================================== */
+
 footer {
     background: black;
+
     color: rgb(216, 138, 138);
+
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+
+    padding: 25px;
+
+    margin-top: 40px;
 }
 
+footer p {
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    section {
+        width: 92%;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE DESIGN
+========================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 12px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px;
+    }
+
+    section {
+        width: 94%;
+        padding: 18px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
+
+}
